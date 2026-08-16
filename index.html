@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="page-title">فاطمة عز | هندسة الحاسب - جامعة طنطا</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+</head>
+<body>
+
+    <!-- زر تبديل اللغة -->
+    <div class="lang-switcher-container">
+        <button id="lang-toggle-btn" onclick="toggleLanguage()">
+            <span class="globe-icon">🌐</span> <span id="lang-text">English</span>
+        </button>
+    </div>
+
+    <!-- تأثير الماوس الممسوح الناعم (أزرق ووردي) -->
+    <div id="cursor-trail-container"></div>
+
+    <!-- الهيدر بتدرجات الأزرق والوردي النابضة -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="glitch-title" data-translate="hero-name">فاطمة عز</h1>
+            <p class="hero-subtitle" data-translate="hero-subtitle">طالبة بكلية هندسة الحاسب جامعة طنطا | مهندسة أنظمة ومهتمة بالأمن السيبراني والـ IoT</p>
+            <div class="hero-stats">
+                <div class="stat-item interactive-box"><span data-translate="stat-1-title">التخصص</span><strong data-translate="stat-1-val">هندسة حاسب</strong></div>
+                <div class="stat-item interactive-box"><span data-translate="stat-2-title">الجامعة</span><strong data-translate="stat-2-val">جامعة طنطا</strong></div>
+                <div class="stat-item interactive-box"><span data-translate="stat-3-title">الاهتمام</span><strong data-translate="stat-3-val">Cyber Security & IoT</strong></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <!-- بطاقة التعريف الشخصية التفاعلية -->
+        <section class="profile-card-section card-3d">
+            <div class="profile-img-container">
+                <div class="img-glow-ring"></div>
+                <img src="assets/profile.jpg" alt="فاطمة عز" class="profile-img">
+            </div>
+            <div class="profile-info">
+                <div class="status-badge-inline" data-translate="profile-status">متاحة للمشاريع والابتكار التقني</div>
+                <h2 data-translate="profile-title">النبذة التعريفية والأكاديمية</h2>
+                <p class="bio-text" data-translate="profile-bio">
+                    طالبة بكلية هندسة الحاسب في جامعة طنطا. أمتلك شغفاً عميقاً بالتقاطع المذهل بين البرمجيات والعتاد المادي (Hardware & Software Integration)، وتطوير الأنظمة المدمجة وإنترنت الأشياء (IoT)، إضافة إلى حماية الشبكات والأنظمة عبر الأمن السيبراني (Cyber Security). أجمع بين الدقة الهندسية الصارمة وحل المشكلات وبين الحس الفني البصري والأدبي.
+                </p>
+                <div class="skills-tags">
+                    <span class="tag interactive-tag">Cyber Security</span>
+                    <span class="tag interactive-tag">Hardware & IoT</span>
+                    <span class="tag interactive-tag">C++ / Python</span>
+                    <span class="tag interactive-tag">UI/UX Vision</span>
+                    <span class="tag interactive-tag">Digital Art & Poetry</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الأدب والشعر الفصيح -->
+        <section class="poetry-section card-3d">
+            <div class="section-header-flex">
+                <h2 data-translate="poetry-heading">شغف الفن والأدب الأصيل</h2>
+                <span class="section-tag" data-translate="poetry-tag">روائع العرب</span>
+            </div>
+            <div class="poetry-grid">
+                <div class="poetry-card interactive-box">
+                    <div class="poet-name" data-translate="poet-1-name">من شعر أبو الطيب المتنبي</div>
+                    <p class="poem-verse" data-translate="poet-1-verse">"إِذا غامَرتَ في شَرَفٍ مَرومِ ... فَلا تَقنَع بِما دونَ النُجومِ"</p>
+                    <span class="poem-note" data-translate="poet-1-note">في الطموح وعل الهمم</span>
+                </div>
+                <div class="poetry-card interactive-box">
+                    <div class="poet-name" data-translate="poet-2-name">من شعر أبو فراس الحمداني</div>
+                    <p class="poem-verse" data-translate="poet-2-verse">"أراعي نجوم الليل واهٍ من الدجى ... وأسأل نفسي أين مني من أهوى"</p>
+                    <span class="poem-note" data-translate="poet-2-note">في صدق المشاعر والوفاء</span>
+                </div>
+                <div class="poetry-card interactive-box">
+                    <div class="poet-name" data-translate="poet-3-name">من شعر عنترة بن شداد</div>
+                    <p class="poem-verse" data-translate="poet-3-verse">"فَإِن تَنكُري خَلقي فإِنّي سَريعٌ إِلَى إِجَابَةِ مَن دَعَاني"</p>
+                    <span class="poem-note" data-translate="poet-3-note">في الفخر والشهامة العربية</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- المعرض المرئي الذكي التفاعلي -->
+        <section class="gallery-section card-3d">
+            <div class="section-title-wrapper">
+                <h2 data-translate="gallery-title">المعرض المرئي والفني المتقدم</h2>
+                <p data-translate="gallery-desc">اختر التصنيف لاستكشاف الأرشيف المرئي بدقة وسلاسة فائقة (اضغط مرتين للإغلاق)</p>
+            </div>
+            
+            <div class="gallery-controls" id="gallery-controls">
+                <button class="gallery-btn interactive-box" data-category="adventure" data-count="45" data-prefix="a">
+                    <span class="btn-icon">📷</span> <span data-translate="btn-adv">تصوير إبداعي (45 صورة)</span>
+                </button>
+                <button class="gallery-btn interactive-box" data-category="agriculture" data-count="10" data-prefix="b">
+                    <span class="btn-icon">🌱</span> <span data-translate="btn-agr">ما زرعته يدي (10 صور)</span>
+                </button>
+                <button class="gallery-btn interactive-box" data-category="culture" data-count="13" data-prefix="c">
+                    <span class="btn-icon">🎨</span> <span data-translate="btn-cul">الثقافة والفن (13 صورة)</span>
+                </button>
+            </div>
+
+            <div id="gallery-container" class="gallery-grid"></div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <h3 data-translate="footer-title">التواصل والشبكات المهنية</h3>
+            <div class="social-links-grid">
+                <a href="https://www.linkedin.com/in/fatima-ezz-b9b0a6429" target="_blank" class="social-btn linkedin interactive-box">LinkedIn</a>
+                <a href="https://www.instagram.com/fat_em412" target="_blank" class="social-btn instagram interactive-box">Instagram</a>
+                <a href="https://www.facebook.com/share/1LbLzZnqH8" target="_blank" class="social-btn facebook interactive-box">Facebook</a>
+                <a href="https://wa.me/201007904648" target="_blank" class="social-btn whatsapp interactive-box">WhatsApp</a>
+            </div>
+            <p class="copyrights" data-translate="footer-copy">© 2026 تم هندسة وتطوير هذا البورتفوليو الاحترافي لفاطمة عز بأعلى معايير الإبداع الرقمي.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
