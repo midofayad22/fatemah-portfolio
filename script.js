@@ -1,6 +1,4 @@
-import { inject } from "@vercel/analytics"
 
-inject()
 const translations = {
     ar: {
         dir: "rtl",
