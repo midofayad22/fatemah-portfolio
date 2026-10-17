@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Motion language
+   --------------------------------------------------------------------------
+   Short, natural easing; transform + opacity only; one-time entrances;
+   nothing loops. Content is visible without JS (the .js class gates reveals).
+   ========================================================================== */
+
+/* scroll-triggered reveal */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--dur-3) var(--ease-out) var(--d, 0ms), transform var(--dur-3) var(--ease-out) var(--d, 0ms);
+}
+
+/* page introduction (hero only, ~0.7s in total) */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes arch-in {
+  from {
+    clip-path: inset(18% 0 0 0 round 999px 999px 0 0);
+    transform: translateY(12px);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 999px 999px 0 0);
+  }
+}
+
+@keyframes trace-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes node-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.intro > * {
+  animation: rise 640ms var(--ease-out) both;
+}
+
+.intro > :nth-child(1) {
+  animation-delay: 40ms;
+}
+
+.intro > :nth-child(2) {
+  animation-delay: 110ms;
+}
+
+.intro > :nth-child(3) {
+  animation-delay: 190ms;
+}
+
+.intro > :nth-child(4) {
+  animation-delay: 270ms;
+}
+
+.intro > :nth-child(5) {
+  animation-delay: 340ms;
+}
+
+/* the artwork uses transform/clip only so it can paint (and be measured) immediately */
+.hero-art .arch-img {
+  animation: arch-in 900ms var(--ease-out) 80ms both;
+}
+
+.js .hero-traces path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: trace-draw 1800ms var(--ease) 200ms forwards;
+}
+
+.js .hero-traces circle {
+  animation: node-in 400ms var(--ease) 1200ms both;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js .hero-traces path {
+    stroke-dashoffset: 0;
+  }
+
+  .btn:hover,
+  .channel:hover,
+  .work a:hover img,
+  .collection:hover img,
+  .mosaic a:hover img {
+    transform: none;
+  }
+}

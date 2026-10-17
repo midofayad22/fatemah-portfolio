@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "home": {
+      "title": "Fatima Ezz | Computer Engineering — Tanta University",
+      "description": "Portfolio of Fatima Ezz, a Computer Engineering student at Tanta University interested in cybersecurity, embedded systems and IoT, with a visual archive and Arabic poetry."
+    },
+    "about": {
+      "title": "About — Fatima Ezz",
+      "description": "Academic profile and technical interests of Fatima Ezz, Computer Engineering student at Tanta University: hardware and software integration, embedded systems, IoT, cybersecurity, C++ and Python."
+    },
+    "gallery": {
+      "title": "Visual archive — Fatima Ezz",
+      "description": "{total} photographs in three collections by Fatima Ezz: creative photography of skies and flowers, plants grown by hand, and culture and Arabic calligraphy."
+    },
+    "literature": {
+      "title": "Arabic poetry — Fatima Ezz",
+      "description": "Verses from classical Arabic poetry by Al-Mutanabbi, Al-Buhturi and Zuhayr ibn Abi Sulma, presented in the original Arabic with an English rendering."
+    },
+    "contact": {
+      "title": "Contact — Fatima Ezz",
+      "description": "Get in touch with Fatima Ezz through LinkedIn, Facebook or WhatsApp."
+    },
+    "notFound": {
+      "title": "Page not found — Fatima Ezz",
+      "description": "The page you were looking for does not exist."
+    },
+    "offline": {
+      "title": "Offline — Fatima Ezz"
+    }
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "about": "About",
+    "gallery": "Gallery",
+    "literature": "Poetry",
+    "contact": "Contact",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "skip": "Skip to main content",
+    "homeLink": "Fatima Ezz — home"
+  },
+  "lang": {
+    "name": "العربية",
+    "code": "ar",
+    "switchLabel": "التبديل إلى العربية"
+  },
+  "theme": {
+    "toDark": "Switch to dark theme",
+    "toLight": "Switch to light theme"
+  },
+  "footer": {
+    "tagline": "Computer Engineering student at Tanta University — cybersecurity, embedded systems, IoT, and a love of visual art and Arabic poetry.",
+    "navTitle": "Pages",
+    "connectTitle": "Connect",
+    "rights": "© {year} Fatima Ezz",
+    "install": "Install as an app",
+    "top": "Back to top"
+  },
+  "common": {
+    "newTab": "(opens in a new tab)",
+    "readMore": "Read more",
+    "open": "Open"
+  },
+  "home": {
+    "eyebrow": "Computer Engineering · Tanta University",
+    "lede": "A Computer Engineering student drawn to cybersecurity, embedded systems and the Internet of Things — and just as drawn to photography, gardens and Arabic poetry.",
+    "status": "Open to projects and technical innovation",
+    "ctaGallery": "Explore the gallery",
+    "ctaAbout": "About me",
+    "ctaContact": "Get in touch",
+    "interestsTitle": "Interests",
+    "collectionsEyebrow": "Visual archive",
+    "collectionsTitle": "Skies, gardens and calligraphy",
+    "collectionsText": "{total} photographs in three collections, each with its own page of the archive.",
+    "collectionsCta": "Open the full gallery",
+    "works": "{n} works",
+    "literatureEyebrow": "Literature",
+    "literatureTitle": "A passion for authentic art and literature",
+    "literatureText": "Classical Arabic verse sits beside the engineering work — read in the original, with an English rendering.",
+    "literatureCta": "Read the verses",
+    "aboutEyebrow": "About",
+    "aboutTitle": "Strict engineering precision, a visual and literary sense",
+    "aboutText": "A student of Computer Engineering at Tanta University, fascinated by the intersection of software and physical hardware, embedded systems and IoT, and by protecting networks and systems through cybersecurity.",
+    "aboutCta": "Read the full profile",
+    "contactTitle": "Let's connect",
+    "contactText": "Reach out through any of these channels."
+  },
+  "interests": {
+    "cyber": {
+      "name": "Cyber Security",
+      "desc": "Protecting networks and systems."
+    },
+    "embedded": {
+      "name": "Embedded Systems",
+      "desc": "Developing systems that live inside devices."
+    },
+    "iot": {
+      "name": "Hardware & IoT",
+      "desc": "Where software meets physical hardware."
+    },
+    "programming": {
+      "name": "C++ / Python",
+      "desc": "Programming languages of interest."
+    },
+    "art": {
+      "name": "Digital Art & Poetry",
+      "desc": "A visual and literary sensibility."
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Engineering precision, with a visual and literary sense",
+    "lede": "A Computer Engineering student at Tanta University with a deep passion for the intersection of software and physical hardware — and an equally strong pull towards art and Arabic poetry.",
+    "factsTitle": "At a glance",
+    "facts": [
+      {
+        "label": "Field",
+        "value": "Computer Engineering"
+      },
+      {
+        "label": "University",
+        "value": "Tanta University"
+      },
+      {
+        "label": "Focus",
+        "value": "Cyber Security & IoT"
+      }
+    ],
+    "academicTitle": "Academic profile",
+    "academicText": "Fatima studies Computer Engineering at Tanta University. Her curiosity centres on how software and physical hardware work together — the ground where embedded systems and the Internet of Things are built.",
+    "technicalTitle": "Technical interests",
+    "technicalLede": "Areas she is studying and exploring.",
+    "technical": [
+      {
+        "name": "Hardware & software integration",
+        "desc": "The fascinating intersection of software and physical hardware."
+      },
+      {
+        "name": "Embedded systems & IoT",
+        "desc": "Developing embedded systems and Internet of Things solutions."
+      },
+      {
+        "name": "Cyber Security",
+        "desc": "Protecting networks and systems."
+      },
+      {
+        "name": "Programming",
+        "desc": "C++ and Python."
+      }
+    ],
+    "creativeTitle": "The creative side",
+    "creativeText": "Alongside engineering, a strong visual and literary sensibility: photography of skies and flowers, plants grown by hand, culture and Arabic calligraphy, and classical Arabic poetry.",
+    "creativeGallery": "Browse the visual archive",
+    "creativeLiterature": "Read the poetry",
+    "principle": "Strict engineering precision and problem solving, together with a visual and literary sense.",
+    "status": "Open to projects and technical innovation"
+  },
+  "gallery": {
+    "eyebrow": "Visual archive",
+    "title": "Skies, gardens and calligraphy",
+    "lede": "Three collections — creative photography, plants grown by hand, and culture & art. Choose a collection, then open any image to view it full size.",
+    "filterLabel": "Filter by collection",
+    "all": "All",
+    "count": "Showing {n} of {total} works",
+    "empty": "There are no works in this collection yet.",
+    "loadError": "This image could not be loaded.",
+    "openWork": "Open image {n} of {total}",
+    "categories": {
+      "photography": {
+        "name": "Creative photography",
+        "desc": "Skies, sunsets, moons, fields and flowers through the lens."
+      },
+      "gardening": {
+        "name": "What my hands planted",
+        "desc": "Flowers and plants grown by hand."
+      },
+      "culture": {
+        "name": "Culture & art",
+        "desc": "Arabic calligraphy, handwriting, architecture and ornament."
+      }
+    }
+  },
+  "lightbox": {
+    "label": "Image viewer",
+    "close": "Close",
+    "prev": "Previous image",
+    "next": "Next image",
+    "counter": "{n} / {total}",
+    "info": "Show details",
+    "hideInfo": "Hide details",
+    "error": "This image could not be loaded."
+  },
+  "literature": {
+    "eyebrow": "Arab masterpieces",
+    "title": "A passion for authentic art and literature",
+    "lede": "Verses from the classical Arabic tradition, shown in the original with an English rendering.",
+    "rendering": "English rendering"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "lede": "Reach out through any of these channels.",
+    "channels": {
+      "linkedin": {
+        "title": "LinkedIn",
+        "desc": "Connect professionally."
+      },
+      "facebook": {
+        "title": "Facebook",
+        "desc": "Follow along on Facebook."
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "desc": "Send a message directly."
+      }
+    }
+  },
+  "pwa": {
+    "installTitle": "Install this portfolio",
+    "installIntro": "On supported devices this site can be installed as an app. It then opens in its own window, and pages you have already visited keep working offline.",
+    "installNow": "Install now",
+    "installedNote": "This site is already running as an installed app.",
+    "stepsTitle": "How to install",
+    "steps": [
+      "Chrome or Edge on desktop: click the install icon in the address bar, or open the menu and choose “Install”.",
+      "Chrome on Android: open the menu and choose “Install app” or “Add to Home screen”.",
+      "Safari on iPhone or iPad: tap Share, then “Add to Home Screen”.",
+      "Other browsers: look for an “Install” or “Add to Home Screen” option in the browser menu."
+    ],
+    "close": "Close",
+    "offline": "You are offline. Pages you have already visited are still available.",
+    "online": "You are back online.",
+    "updateReady": "A new version of the site is available.",
+    "refresh": "Refresh",
+    "dismiss": "Dismiss"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you were looking for does not exist or has moved.",
+    "home": "Back to the home page"
+  },
+  "offline": {
+    "title": "You are offline",
+    "text": "This page has not been saved for offline use yet. Reconnect and try again, or open a page you have already visited.",
+    "retry": "Try again"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "_note": "Verses are kept exactly as they appeared in the original index.html (with tashkeel). The 'mutanabbi-stars' verse is from the original script.js. Two further verses attributed in script.js to Abu Firas al-Hamdani and Antarah ibn Shaddad could not be verified and are intentionally not published; see README.",
+  "verses": [
+    {
+      "id": "mutanabbi-resolve",
+      "poet": { "ar": "من شعر أبو الطيب المتنبي", "en": "Al-Mutanabbi" },
+      "hemistichs": [
+        "عَلَى قَدْرِ أَهْلِ الْعَزْمِ تَأْتِي الْعَزَائِمُ",
+        "وَتَأْتِي عَلَى قَدْرِ الْكِرَامِ الْمَكَارِمُ"
+      ],
+      "translation": "Resolutions arrive in proportion to the people of resolve, and noble deeds arrive in proportion to the noble.",
+      "note": { "ar": "في العزم وعلو الهمة", "en": "On determination and high aspiration" }
+    },
+    {
+      "id": "buhturi-spring",
+      "poet": { "ar": "من شعر البحتري", "en": "Al-Buhturi" },
+      "hemistichs": [
+        "أَتَاكَ الرَّبِيعُ الطَّلْقُ يَخْتَالُ ضَاحِكاً",
+        "مِنَ الْحُسْنِ حَتَّى كَادَ أَنْ يَتَكَلَّمَا"
+      ],
+      "translation": "Radiant spring has come to you, strutting and laughing, so lovely it all but began to speak.",
+      "note": { "ar": "في وصف الطبيعة والجمال", "en": "On nature and beauty" }
+    },
+    {
+      "id": "zuhayr-kindness",
+      "poet": { "ar": "من شعر زهير بن أبي سلمى", "en": "Zuhayr ibn Abi Sulma" },
+      "hemistichs": [
+        "وَمَنْ يَجْعَلِ المَعْرُوفَ فِي غَيْرِ أَهْلِهِ",
+        "يَكُنْ حَمْدُهُ ذَمّاً عَلَيْهِ وَيَنْدَمِ"
+      ],
+      "translation": "Whoever places kindness where it does not belong will find his praise turned to blame, and will regret it.",
+      "note": { "ar": "في الحكمة ووضع الأمور في نصابها", "en": "On wisdom and putting things in their proper place" }
+    },
+    {
+      "id": "mutanabbi-stars",
+      "poet": { "ar": "من شعر أبو الطيب المتنبي", "en": "Al-Mutanabbi" },
+      "hemistichs": [
+        "إِذا غامَرتَ في شَرَفٍ مَرومِ",
+        "فَلا تَقنَع بِما دونَ النُجومِ"
+      ],
+      "translation": "If you venture toward a noble goal, do not settle for anything less than the stars.",
+      "note": { "ar": "في الطموح وعلو الهمم", "en": "On ambition and high aspirations" }
+    }
+  ]
+}

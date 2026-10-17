@@ -1,0 +1,13 @@
+import { chromium } from "playwright-core";
+import { serve } from "./serve.mjs";
+const [, , url, out, w = "1280", h = "800", theme = "light", full = "0"] = process.argv;
+const server = await serve(4180);
+const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const ctx = await b.newContext({ viewport: { width: +w, height: +h }, colorScheme: theme, reducedMotion: "reduce" });
+const p = await ctx.newPage();
+p.on("console", (m) => ["error", "warning"].includes(m.type()) && console.log("console", m.type(), m.text()));
+p.on("pageerror", (e) => console.log("pageerror", e.message));
+await p.goto("http://localhost:4180" + url, { waitUntil: "networkidle" });
+await p.waitForTimeout(500);
+await p.screenshot({ path: out, fullPage: full === "1" });
+await b.close(); server.close();
