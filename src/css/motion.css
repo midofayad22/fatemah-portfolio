@@ -20,7 +20,6 @@
 /* page introduction (hero only, ~0.7s in total) */
 @keyframes rise {
   from {
-    opacity: 0;
     transform: translateY(14px);
   }
 }

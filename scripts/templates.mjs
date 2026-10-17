@@ -139,7 +139,7 @@ ${noindex ? "" : `<link rel="canonical" href="${url}">`}${alts}
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(meta.title)}">${meta.description ? `<meta name="twitter:description" content="${esc(meta.description)}">` : ""}<meta name="twitter:image" content="${img}">
 ${ctx.site.googleSiteVerification ? `<meta name="google-site-verification" content="${esc(ctx.site.googleSiteVerification)}">` : ""}
 ${pre}<script>${ctx.assets.themeInit}</script>
-<link rel="stylesheet" href="${ctx.assets.css}">${ldBlocks}`;
+<link rel="stylesheet" href="${ctx.assets.css}">${o.extraHead || ""}${ldBlocks}`;
 }
 
 function shell(ctx, o, body, { minimal = false, extraScripts = "" } = {}) {
@@ -268,7 +268,10 @@ ${lang === "en" ? `<p class="verse-meta"><em>${esc(v.translation)}</em></p>` : "
     { "@context": "https://schema.org", "@type": "WebSite", "@id": `${site}/#website`, url: site + route(lang, "home"), name: ctx.site.name[lang], inLanguage: lang, publisher: { "@id": `${site}/#person` } },
     { "@context": "https://schema.org", ...personLd(ctx, lang) },
   ];
-  return shell(ctx, { lang, page: "home", meta: t("meta.home"), jsonld: ld }, body);
+  const pim = ctx.images.profile;
+  const pset = pim.widths.map((w) => `/img/${pim.slug}-${w}.${pim.hash}.avif ${w}w`).join(", ");
+  const extraHead = `<link rel="preload" as="image" type="image/avif" imagesrcset="${pset}" imagesizes="(min-width: 900px) 26rem, 80vw" fetchpriority="high">`;
+  return shell(ctx, { lang, page: "home", meta: t("meta.home"), jsonld: ld, extraHead }, body);
 }
 
 function aboutPage(ctx, lang) {

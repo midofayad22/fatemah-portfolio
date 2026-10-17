@@ -2,6 +2,7 @@
 import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
+import zlib from "node:zlib";
 const DIST = path.resolve(import.meta.dirname, "../dist");
 const PORT = Number(process.env.PORT || 4173);
 const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".webmanifest": "application/manifest+json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".avif": "image/avif", ".woff2": "font/woff2", ".xml": "application/xml", ".txt": "text/plain" };
@@ -20,8 +21,11 @@ export function serve(port = PORT) {
     const headers = { "Content-Type": TYPES[ext] || "application/octet-stream" };
     if (/\/(css|js|fonts|img)\//.test(url.pathname)) headers["Cache-Control"] = "public, max-age=31536000, immutable";
     else if (url.pathname === "/sw.js") headers["Cache-Control"] = "no-cache";
+    const gz = /\.(html|css|js|json|svg|xml|txt|webmanifest)$/.test(ext) && /gzip/.test(req.headers["accept-encoding"] || "");
+    if (gz) headers["Content-Encoding"] = "gzip";
     res.writeHead(status, headers);
-    fs.createReadStream(p).pipe(res);
+    const stream = fs.createReadStream(p);
+    (gz ? stream.pipe(zlib.createGzip()) : stream).pipe(res);
   });
   return new Promise((r) => server.listen(port, () => r(server)));
 }

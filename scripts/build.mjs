@@ -42,8 +42,8 @@ const FACES = [
   ["FE Mono", "ibm-plex-mono", "ibm-plex-mono-latin-500-normal", "500", "normal", LATIN],
 ];
 const PRELOAD_KEYS = {
-  ar: ["ibm-plex-sans-arabic-arabic-400-normal", "amiri-arabic-700-normal"],
-  en: ["ibm-plex-sans-latin-400-normal", "cormorant-garamond-latin-600-normal"],
+  ar: ["ibm-plex-sans-arabic-arabic-400-normal", "ibm-plex-sans-arabic-arabic-500-normal", "amiri-arabic-700-normal"],
+  en: ["ibm-plex-sans-latin-400-normal", "ibm-plex-sans-latin-500-normal", "cormorant-garamond-latin-600-normal", "cormorant-garamond-latin-500-italic", "ibm-plex-mono-latin-500-normal"],
 };
 
 async function buildFonts() {
@@ -54,7 +54,7 @@ async function buildFonts() {
     const name = `${file}.${sha(buf)}.woff2`;
     await write(`fonts/${name}`, buf);
     urls[file] = `/fonts/${name}`;
-    css += `@font-face{font-family:"${family}";font-style:${style};font-weight:${weight};font-display:swap;src:url(/fonts/${name}) format("woff2");unicode-range:${range}}\n`;
+    css += `@font-face{font-family:"${family}";font-style:${style};font-weight:${weight};font-display:optional;src:url(/fonts/${name}) format("woff2");unicode-range:${range}}\n`;
   }
   await fs.writeFile(path.join(ROOT, "src/css/_fonts.generated.css"), css);
   return { ar: PRELOAD_KEYS.ar.map((k) => urls[k]), en: PRELOAD_KEYS.en.map((k) => urls[k]) };
