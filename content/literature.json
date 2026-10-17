@@ -1,45 +1,181 @@
 {
-  "_note": "Verses are kept exactly as they appeared in the original index.html (with tashkeel). The 'mutanabbi-stars' verse is from the original script.js. Two further verses attributed in script.js to Abu Firas al-Hamdani and Antarah ibn Shaddad could not be verified and are intentionally not published; see README.",
+  "_note": "Verses were checked against aldiwan.net, diwanalarab.com and mawdoo3.com. Original hemistich text of the first four is unchanged from the old site. Tashkeel for the Abu Firas verses was added by hand (sources print them bare). English renderings are original translations.",
   "verses": [
     {
       "id": "mutanabbi-resolve",
-      "poet": { "ar": "من شعر أبو الطيب المتنبي", "en": "Al-Mutanabbi" },
+      "poet": {
+        "ar": "من شعر أبو الطيب المتنبي",
+        "en": "Al-Mutanabbi"
+      },
       "hemistichs": [
         "عَلَى قَدْرِ أَهْلِ الْعَزْمِ تَأْتِي الْعَزَائِمُ",
         "وَتَأْتِي عَلَى قَدْرِ الْكِرَامِ الْمَكَارِمُ"
       ],
       "translation": "Resolutions arrive in proportion to the people of resolve, and noble deeds arrive in proportion to the noble.",
-      "note": { "ar": "في العزم وعلو الهمة", "en": "On determination and high aspiration" }
+      "note": {
+        "ar": "في العزم وعلو الهمة",
+        "en": "On determination and high aspiration"
+      }
     },
     {
       "id": "buhturi-spring",
-      "poet": { "ar": "من شعر البحتري", "en": "Al-Buhturi" },
+      "poet": {
+        "ar": "من شعر البحتري",
+        "en": "Al-Buhturi"
+      },
       "hemistichs": [
         "أَتَاكَ الرَّبِيعُ الطَّلْقُ يَخْتَالُ ضَاحِكاً",
         "مِنَ الْحُسْنِ حَتَّى كَادَ أَنْ يَتَكَلَّمَا"
       ],
       "translation": "Radiant spring has come to you, strutting and laughing, so lovely it all but began to speak.",
-      "note": { "ar": "في وصف الطبيعة والجمال", "en": "On nature and beauty" }
+      "note": {
+        "ar": "في وصف الطبيعة والجمال",
+        "en": "On nature and beauty"
+      }
     },
     {
       "id": "zuhayr-kindness",
-      "poet": { "ar": "من شعر زهير بن أبي سلمى", "en": "Zuhayr ibn Abi Sulma" },
+      "poet": {
+        "ar": "من شعر زهير بن أبي سلمى",
+        "en": "Zuhayr ibn Abi Sulma"
+      },
       "hemistichs": [
         "وَمَنْ يَجْعَلِ المَعْرُوفَ فِي غَيْرِ أَهْلِهِ",
         "يَكُنْ حَمْدُهُ ذَمّاً عَلَيْهِ وَيَنْدَمِ"
       ],
       "translation": "Whoever places kindness where it does not belong will find his praise turned to blame, and will regret it.",
-      "note": { "ar": "في الحكمة ووضع الأمور في نصابها", "en": "On wisdom and putting things in their proper place" }
+      "note": {
+        "ar": "في الحكمة ووضع الأمور في نصابها",
+        "en": "On wisdom and putting things in their proper place"
+      }
     },
     {
       "id": "mutanabbi-stars",
-      "poet": { "ar": "من شعر أبو الطيب المتنبي", "en": "Al-Mutanabbi" },
+      "poet": {
+        "ar": "من شعر أبو الطيب المتنبي",
+        "en": "Al-Mutanabbi"
+      },
       "hemistichs": [
         "إِذا غامَرتَ في شَرَفٍ مَرومِ",
         "فَلا تَقنَع بِما دونَ النُجومِ"
       ],
       "translation": "If you venture toward a noble goal, do not settle for anything less than the stars.",
-      "note": { "ar": "في الطموح وعلو الهمم", "en": "On ambition and high aspirations" }
+      "note": {
+        "ar": "في الطموح وعلو الهمم",
+        "en": "On ambition and high aspirations"
+      }
+    },
+    {
+      "id": "mutanabbi-horses",
+      "poet": {
+        "ar": "من شعر أبو الطيب المتنبي",
+        "en": "Al-Mutanabbi"
+      },
+      "hemistichs": [
+        "الخَيلُ وَاللَيلُ وَالبَيداءُ تَعرِفُني",
+        "وَالسَيفُ وَالرُمحُ وَالقِرطاسُ وَالقَلَمُ"
+      ],
+      "translation": "The horses, the night and the desert know me, and so do the sword, the spear, the paper and the pen.",
+      "note": {
+        "ar": "في الفخر والاعتزاز بالنفس",
+        "en": "On pride and self-possession"
+      }
+    },
+    {
+      "id": "abufiras-tears",
+      "poet": {
+        "ar": "من شعر أبو فراس الحمداني",
+        "en": "Abu Firas al-Hamdani"
+      },
+      "hemistichs": [
+        "أَراكَ عَصِيَّ الدَّمعِ شيمَتُكَ الصَّبرُ",
+        "أَما لِلهَوى نَهيٌ عَلَيكَ وَلا أَمرُ"
+      ],
+      "translation": "I see you restrained in tears, patience your nature — has love no say over you, no command?",
+      "note": {
+        "ar": "في كتمان الشوق وعزة النفس",
+        "en": "On hidden longing and dignity"
+      }
+    },
+    {
+      "id": "abufiras-thirst",
+      "poet": {
+        "ar": "من شعر أبو فراس الحمداني",
+        "en": "Abu Firas al-Hamdani"
+      },
+      "hemistichs": [
+        "مُعَلِّلَتي بِالوَصلِ وَالمَوتُ دونَهُ",
+        "إِذا مِتُّ ظَمآناً فَلا نَزَلَ القَطرُ"
+      ],
+      "translation": "You console me with promises of union while death stands before it — if I die thirsty, let no rain fall.",
+      "note": {
+        "ar": "في الحب والاعتزاز",
+        "en": "On love and pride"
+      }
+    },
+    {
+      "id": "abufiras-pride",
+      "poet": {
+        "ar": "من شعر أبو فراس الحمداني",
+        "en": "Abu Firas al-Hamdani"
+      },
+      "hemistichs": [
+        "وَنَحنُ أُناسٌ لا تَوَسُّطَ بَينَنا",
+        "لَنا الصَّدرُ دونَ العالَمينَ أَوِ القَبرُ"
+      ],
+      "translation": "We are a people with no middle ground: the foremost place among all the worlds, or the grave.",
+      "note": {
+        "ar": "في الفخر وعلو الهمة",
+        "en": "On pride and aspiration"
+      }
+    },
+    {
+      "id": "buhturi-sinniyya",
+      "poet": {
+        "ar": "من شعر البحتري",
+        "en": "Al-Buhturi"
+      },
+      "hemistichs": [
+        "صُنتُ نَفسي عَمّا يُدَنِّسُ نَفسي",
+        "وَتَرَفَّعتُ عَن جَدا كُلِّ جِبسِ"
+      ],
+      "translation": "I kept my soul from whatever would stain it, and rose above the gifts of every base man.",
+      "note": {
+        "ar": "في عزة النفس (مطلع السينية)",
+        "en": "On self-respect (opening of the Sīniyya)"
+      }
+    },
+    {
+      "id": "baha-hubb",
+      "poet": {
+        "ar": "من شعر بهاء الدين زهير",
+        "en": "Baha' al-Din Zuhayr"
+      },
+      "hemistichs": [
+        "يا سَيِّداً بِوِدادِهِ مازِلتُ مَلآنَ اليَدَينِ",
+        "إِن غِبتَ عَنّي أَو حَضَرتَ فَيا لَها مِن حُسنَيَينِ"
+      ],
+      "translation": "O master, whose affection has always filled my hands — absent or present, how fair both states are.",
+      "note": {
+        "ar": "في الود والوفاء",
+        "en": "On affection and loyalty"
+      }
+    },
+    {
+      "id": "baha-shamayil",
+      "poet": {
+        "ar": "من شعر بهاء الدين زهير",
+        "en": "Baha' al-Din Zuhayr"
+      },
+      "hemistichs": [
+        "يا مَن لَعِبَت بِهِ شُمولٌ",
+        "ما أَلطَفَ هَذِهِ الشَمائِل"
+      ],
+      "translation": "You whom the wine has swayed — how gentle these ways of yours are.",
+      "note": {
+        "ar": "في الغزل والرقة",
+        "en": "On tenderness and charm"
+      }
     }
   ]
 }

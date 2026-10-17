@@ -1,12 +1,12 @@
 {
   "meta": {
     "home": {
-      "title": "Fatima Ezz | Computer Engineering — Tanta University",
-      "description": "Portfolio of Fatima Ezz, a Computer Engineering student at Tanta University interested in cybersecurity, embedded systems and IoT, with a visual archive and Arabic poetry."
+      "title": "Fatima Ezz | AI & Robotics Enthusiast — Computer Engineering, TNU",
+      "description": "Portfolio of Fatima Ezz, an AI & Robotics enthusiast studying Computer Engineering at Tanta National University (TNU), with interests in cybersecurity, networking and embedded systems, a visual archive and Arabic poetry."
     },
     "about": {
       "title": "About — Fatima Ezz",
-      "description": "Academic profile and technical interests of Fatima Ezz, Computer Engineering student at Tanta University: hardware and software integration, embedded systems, IoT, cybersecurity, C++ and Python."
+      "description": "Academic profile and interests of Fatima Ezz, Computer Engineering student at Tanta National University (TNU): AI & robotics, cybersecurity, networking, embedded systems, IoT, C++ and Python."
     },
     "gallery": {
       "title": "Visual archive — Fatima Ezz",
@@ -14,7 +14,7 @@
     },
     "literature": {
       "title": "Arabic poetry — Fatima Ezz",
-      "description": "Verses from classical Arabic poetry by Al-Mutanabbi, Al-Buhturi and Zuhayr ibn Abi Sulma, presented in the original Arabic with an English rendering."
+      "description": "Verses from classical Arabic poetry by Al-Mutanabbi, Abu Firas al-Hamdani, Al-Buhturi, Baha' al-Din Zuhayr and Zuhayr ibn Abi Sulma, in the original Arabic with an English rendering."
     },
     "contact": {
       "title": "Contact — Fatima Ezz",
@@ -50,7 +50,7 @@
     "toLight": "Switch to light theme"
   },
   "footer": {
-    "tagline": "Computer Engineering student at Tanta University — cybersecurity, embedded systems, IoT, and a love of visual art and Arabic poetry.",
+    "tagline": "AI & Robotics enthusiast studying Computer Engineering at Tanta National University — with interests in cybersecurity, networking, embedded systems, art and Arabic poetry.",
     "navTitle": "Pages",
     "connectTitle": "Connect",
     "rights": "© {year} Fatima Ezz",
@@ -63,8 +63,8 @@
     "open": "Open"
   },
   "home": {
-    "eyebrow": "Computer Engineering · Tanta University",
-    "lede": "A Computer Engineering student drawn to cybersecurity, embedded systems and the Internet of Things — and just as drawn to photography, gardens and Arabic poetry.",
+    "eyebrow": "AI & Robotics Enthusiast | Computer Engineering TNU",
+    "lede": "A Computer Engineering student at Tanta National University (TNU) and an AI & robotics enthusiast — also drawn to cybersecurity, networking, embedded systems, photography, gardens and Arabic poetry.",
     "status": "Open to projects and technical innovation",
     "ctaGallery": "Explore the gallery",
     "ctaAbout": "About me",
@@ -81,15 +81,23 @@
     "literatureCta": "Read the verses",
     "aboutEyebrow": "About",
     "aboutTitle": "Strict engineering precision, a visual and literary sense",
-    "aboutText": "A student of Computer Engineering at Tanta University, fascinated by the intersection of software and physical hardware, embedded systems and IoT, and by protecting networks and systems through cybersecurity.",
+    "aboutText": "A student of Computer Engineering at Tanta National University (TNU), passionate about artificial intelligence and robotics, and fascinated by where software meets physical hardware — embedded systems, IoT, networking and cybersecurity.",
     "aboutCta": "Read the full profile",
     "contactTitle": "Let's connect",
     "contactText": "Reach out through any of these channels."
   },
   "interests": {
+    "ai": {
+      "name": "AI & Robotics",
+      "desc": "The main passion: intelligent systems and robots."
+    },
     "cyber": {
       "name": "Cyber Security",
       "desc": "Protecting networks and systems."
+    },
+    "networks": {
+      "name": "Networking",
+      "desc": "How systems and devices communicate."
     },
     "embedded": {
       "name": "Embedded Systems",
@@ -110,28 +118,32 @@
   },
   "about": {
     "eyebrow": "About",
-    "title": "Engineering precision, with a visual and literary sense",
-    "lede": "A Computer Engineering student at Tanta University with a deep passion for the intersection of software and physical hardware — and an equally strong pull towards art and Arabic poetry.",
+    "title": "AI & robotics, with a visual and literary sense",
+    "lede": "A Computer Engineering student at Tanta National University (TNU) and an AI & Robotics enthusiast — with a deep interest in how software meets physical hardware, and an equally strong pull towards art and Arabic poetry.",
     "factsTitle": "At a glance",
     "facts": [
+      {
+        "label": "Focus",
+        "value": "AI & Robotics"
+      },
       {
         "label": "Field",
         "value": "Computer Engineering"
       },
       {
         "label": "University",
-        "value": "Tanta University"
-      },
-      {
-        "label": "Focus",
-        "value": "Cyber Security & IoT"
+        "value": "Tanta National University (TNU)"
       }
     ],
     "academicTitle": "Academic profile",
-    "academicText": "Fatima studies Computer Engineering at Tanta University. Her curiosity centres on how software and physical hardware work together — the ground where embedded systems and the Internet of Things are built.",
+    "academicText": "Fatima studies Computer Engineering at Tanta National University (TNU). Her main interest is artificial intelligence and robotics, supported by curiosity about how software and physical hardware work together — the ground where embedded systems, networking and the Internet of Things are built.",
     "technicalTitle": "Technical interests",
-    "technicalLede": "Areas she is studying and exploring.",
+    "technicalLede": "Areas she is studying and exploring, with AI & robotics at the centre.",
     "technical": [
+      {
+        "name": "AI & Robotics",
+        "desc": "Her main interest: intelligent systems and robots."
+      },
       {
         "name": "Hardware & software integration",
         "desc": "The fascinating intersection of software and physical hardware."
@@ -141,8 +153,8 @@
         "desc": "Developing embedded systems and Internet of Things solutions."
       },
       {
-        "name": "Cyber Security",
-        "desc": "Protecting networks and systems."
+        "name": "Cyber Security & networking",
+        "desc": "Protecting networks and systems, and understanding how they communicate."
       },
       {
         "name": "Programming",

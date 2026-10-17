@@ -182,8 +182,8 @@ function personLd(ctx, lang) {
     url: site + route(lang, "home"),
     image: `${site}/img/${ctx.images.profile.slug}-${ctx.images.profile.widths.at(-1)}.${ctx.images.profile.hash}.jpg`,
     description: ctx.t[lang]("meta.home.description"),
-    affiliation: { "@type": "CollegeOrUniversity", name: lang === "ar" ? "جامعة طنطا" : "Tanta University" },
-    knowsAbout: ["Cyber Security", "Embedded Systems", "Internet of Things", "C++", "Python", "Photography", "Arabic poetry"],
+    affiliation: { "@type": "CollegeOrUniversity", name: lang === "ar" ? "جامعة طنطا الأهلية" : "Tanta National University" },
+    knowsAbout: ["Artificial Intelligence", "Robotics", "Networking", "Cyber Security", "Embedded Systems", "Internet of Things", "C++", "Python", "Photography", "Arabic poetry"],
     sameAs: ctx.site.sameAs,
   };
 }
@@ -213,7 +213,7 @@ function homePage(ctx, lang) {
 
   const interests = ctx.site.interests
     .map((id, i) => {
-      const latin = { cyber: "Cyber Security", embedded: "Embedded Systems", iot: "Hardware & IoT", programming: "C++ / Python", art: "Digital Art & Poetry" }[id];
+      const latin = { ai: "AI & Robotics", networks: "Networking", cyber: "Cyber Security", embedded: "Embedded Systems", iot: "Hardware & IoT", programming: "C++ / Python", art: "Digital Art & Poetry" }[id];
       return `<li class="index-item ${reveal(i)}"><span class="index-num mono">${String(i + 1).padStart(2, "0")}</span><h3>${esc(t(`interests.${id}.name`))}${lang === "ar" ? `<span class="index-latin mono" lang="en" dir="ltr">${esc(latin)}</span>` : ""}</h3><p class="index-desc">${esc(t(`interests.${id}.desc`))}</p></li>`;
     })
     .join("");

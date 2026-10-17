@@ -686,7 +686,7 @@
   display: grid;
   gap: var(--s-1) var(--s-7);
   font-family: var(--font-display);
-  font-size: var(--step-4);
+  font-size: var(--step-3);
   line-height: 1.9;
   color: var(--ink);
 }
@@ -694,7 +694,12 @@
 @media (min-width: 1100px) {
   .poem-text .hemistichs {
     grid-template-columns: 1fr 1fr;
+    column-gap: var(--s-6);
   }
+}
+
+.poem-text blockquote {
+  margin: 0;
 }
 
 .poem-text .rendering {
@@ -861,4 +866,9 @@
   .hero-traces {
     opacity: calc(var(--trace-opacity) * 0.45);
   }
+}
+
+:lang(ar) .page-head h1 {
+  max-inline-size: 22ch;
+  font-size: var(--step-4);
 }

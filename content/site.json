@@ -2,16 +2,50 @@
   "siteUrl": "https://fatemah-portfolio.vercel.app",
   "googleSiteVerification": "",
   "defaultLang": "ar",
-  "langs": ["ar", "en"],
-  "name": { "ar": "فاطمة عز", "en": "Fatima Ezz" },
-  "pages": ["home", "about", "gallery", "literature", "contact"],
-  "sameAs": ["https://www.linkedin.com/in/fatima-ezz-b9b0a6429"],
-  "contact": [
-    { "id": "linkedin", "url": "https://www.linkedin.com/in/fatima-ezz-b9b0a6429", "label": "LinkedIn" },
-    { "id": "facebook", "url": "https://www.facebook.com/share/1LbLzZnqH8", "label": "Facebook" },
-    { "id": "whatsapp", "url": "https://wa.me/201007904648", "label": "WhatsApp" }
+  "langs": [
+    "ar",
+    "en"
   ],
-  "interests": ["cyber", "embedded", "iot", "programming", "art"],
+  "name": {
+    "ar": "فاطمة عز",
+    "en": "Fatima Ezz"
+  },
+  "pages": [
+    "home",
+    "about",
+    "gallery",
+    "literature",
+    "contact"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/fatima-ezz-b9b0a6429"
+  ],
+  "contact": [
+    {
+      "id": "linkedin",
+      "url": "https://www.linkedin.com/in/fatima-ezz-b9b0a6429",
+      "label": "LinkedIn"
+    },
+    {
+      "id": "facebook",
+      "url": "https://www.facebook.com/share/1LbLzZnqH8",
+      "label": "Facebook"
+    },
+    {
+      "id": "whatsapp",
+      "url": "https://wa.me/201007904648",
+      "label": "WhatsApp"
+    }
+  ],
+  "interests": [
+    "ai",
+    "cyber",
+    "networks",
+    "embedded",
+    "iot",
+    "programming",
+    "art"
+  ],
   "showcase": {
     "photography": "a14",
     "gardening": "b6",

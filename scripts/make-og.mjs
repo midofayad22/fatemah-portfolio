@@ -28,9 +28,9 @@ p{margin-top:28px;font-size:30px;line-height:1.55;color:#b6c3d6;max-width:560px}
 .a i{position:absolute;inset:0;transform:translate(${ar ? "-" : ""}18px,18px);border-radius:inherit;background:linear-gradient(135deg,#00b4d8,#ec4899)}
 .a b{position:absolute;inset:0;border-radius:inherit;background:#fff url(${profile}) 42% 50%/cover}
 </style><body><div class="c"><div class="g1"></div><div class="g2"></div>
-<div class="t"><div class="k">${ar ? "هندسة الحاسب · جامعة طنطا" : "Computer Engineering · Tanta University"}</div>
+<div class="t"><div class="k">${ar ? "شغوفة بالذكاء الاصطناعي والروبوتات" : "AI &amp; Robotics Enthusiast"}</div>
 <h1>${ar ? "فاطمة <em>عز</em>" : "Fatima <em>Ezz</em>"}</h1><div class="bar"></div>
-<p>${ar ? "الأمن السيبراني · الأنظمة المدمجة · إنترنت الأشياء · الفن والشعر" : "Cybersecurity · Embedded Systems · IoT · Art &amp; Poetry"}</p></div>
+<p>${ar ? "هندسة الحاسب · جامعة طنطا الأهلية" : "Computer Engineering · Tanta National University"}</p></div>
 <div class="a"><i></i><b></b></div></div></body></html>`;
 };
 const b = await chromium.launch({ executablePath: process.env.CHROME || "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
