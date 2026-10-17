@@ -38,7 +38,8 @@
     "menu": "Menu",
     "closeMenu": "Close menu",
     "skip": "Skip to main content",
-    "homeLink": "Fatima Ezz — home"
+    "homeLink": "Fatima Ezz — home",
+    "install": "Install as an app"
   },
   "lang": {
     "name": "العربية",
@@ -50,11 +51,9 @@
     "toLight": "Switch to light theme"
   },
   "footer": {
-    "tagline": "AI & Robotics enthusiast studying Computer Engineering at Tanta National University — with interests in cybersecurity, networking, embedded systems, art and Arabic poetry.",
+    "tagline": "AI & Robotics enthusiast · Computer Engineering, TNU",
     "navTitle": "Pages",
-    "connectTitle": "Connect",
     "rights": "© {year} Fatima Ezz",
-    "install": "Install as an app",
     "top": "Back to top"
   },
   "common": {
@@ -63,8 +62,8 @@
     "open": "Open"
   },
   "home": {
-    "eyebrow": "AI & Robotics Enthusiast | Computer Engineering TNU",
-    "lede": "A Computer Engineering student at Tanta National University (TNU) and an AI & robotics enthusiast — also drawn to cybersecurity, networking, embedded systems, photography, gardens and Arabic poetry.",
+    "eyebrow": "Computer Engineering · Tanta National University (TNU)",
+    "lede": "A Computer Engineering student fascinated by where software meets physical hardware.",
     "status": "Open to projects and technical innovation",
     "ctaGallery": "Explore the gallery",
     "ctaAbout": "About me",
@@ -84,7 +83,9 @@
     "aboutText": "A student of Computer Engineering at Tanta National University (TNU), passionate about artificial intelligence and robotics, and fascinated by where software meets physical hardware — embedded systems, IoT, networking and cybersecurity.",
     "aboutCta": "Read the full profile",
     "contactTitle": "Let's connect",
-    "contactText": "Reach out through any of these channels."
+    "contactText": "Reach out through any of these channels.",
+    "role": "AI & Robotics Enthusiast",
+    "alsoLabel": "Also drawn to"
   },
   "interests": {
     "ai": {

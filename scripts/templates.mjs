@@ -62,47 +62,45 @@ export function picture(ctx, id, { sizes, alt = "", loading = "lazy", priority =
 }
 
 /* ----------------------------------------------------------------- layout */
+const ambient = `<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>`;
+
 function brandMark() {
   return `<svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="mk-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00b4d8"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="#021526"/><path d="M17 49V31a15 15 0 0 1 30 0v18" fill="none" stroke="url(#mk-g)" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="23" r="4" fill="#fff"/></svg>`;
 }
 
 function header(ctx, lang, page, t) {
   const pages = ["home", "about", "gallery", "literature", "contact"];
-  const links = pages
-    .map(
-      (p) =>
-        `<li><a class="nav-link" href="${route(lang, p)}"${p === page ? ' aria-current="page"' : ""}>${esc(t(`nav.${p}`))}</a></li>`,
-    )
-    .join("");
+  const links =
+    pages
+      .map(
+        (p) =>
+          `<li><a class="nav-link" href="${route(lang, p)}"${p === page ? ' aria-current="page"' : ""}>${esc(t(`nav.${p}`))}</a></li>`,
+      )
+      .join("") +
+    `<li class="nav-install"><button type="button" data-install-open hidden>${icon("download")}<span>${esc(t("nav.install"))}</span></button></li>`;
   const o = other(lang);
   const switchHref = route(o, page);
-  return `<header class="site-header"><div class="container header-inner">
+  return `<header class="site-header"><div class="container"><div class="header-inner">
 <a class="brand" href="${route(lang, "home")}" aria-label="${esc(t("nav.homeLink"))}">${brandMark()}<span>${esc(ctx.site.name[lang])}</span></a>
 <nav class="nav" id="site-nav" aria-label="${esc(t("nav.label"))}"><ul class="nav-list">${links}</ul></nav>
 <div class="header-controls">
 <a class="lang-switch" href="${switchHref}" hreflang="${o}" lang="${o}" data-lang-switch="${o}" aria-label="${esc(t("lang.switchLabel"))}">${icon("languages")}<span>${esc(t("lang.name"))}</span></a>
 <button class="icon-btn theme-toggle" type="button" data-theme-toggle data-to-dark="${esc(t("theme.toDark"))}" data-to-light="${esc(t("theme.toLight"))}" aria-label="${esc(t("theme.toDark"))}">${icon("moon", "icon-moon")}${icon("sun", "icon-sun")}</button>
+<button class="icon-btn install-btn" type="button" data-install-open hidden aria-label="${esc(t("nav.install"))}" title="${esc(t("nav.install"))}">${icon("download")}</button>
 <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav" data-open-label="${esc(t("nav.menu"))}" data-close-label="${esc(t("nav.closeMenu"))}" aria-label="${esc(t("nav.menu"))}">${icon("menu", "icon-menu")}${icon("x", "icon-close")}</button>
-</div></div></header>`;
+</div></div></div></header>`;
 }
 
 function footer(ctx, lang, t) {
   const pages = ["home", "about", "gallery", "literature", "contact"];
   const nav = pages.map((p) => `<li><a href="${route(lang, p)}">${esc(t(`nav.${p}`))}</a></li>`).join("");
-  const links = ctx.site.contact
-    .map(
-      (c) =>
-        `<li><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">${brandIcon(c.id)}<span>${esc(c.label)}</span><span class="visually-hidden"> ${esc(t("common.newTab"))}</span></a></li>`,
-    )
-    .join("");
   return `<footer class="site-footer"><div class="container">
-<div class="footer-grid">
+<div class="footer-row">
 <div><p class="footer-brand">${esc(ctx.site.name[lang])}</p><p class="footer-tagline">${esc(t("footer.tagline"))}</p></div>
-<nav aria-label="${esc(t("footer.navTitle"))}"><h2 class="footer-title">${esc(t("footer.navTitle"))}</h2><ul class="footer-list" role="list">${nav}</ul></nav>
-<div><h2 class="footer-title">${esc(t("footer.connectTitle"))}</h2><ul class="footer-list" role="list">${links}</ul></div>
+<nav aria-label="${esc(t("footer.navTitle"))}"><ul class="footer-nav" role="list">${nav}</ul></nav>
 </div>
 <div class="footer-bottom"><p>${esc(t("footer.rights", { year: "\u0000" })).replace("\u0000", `<span data-year>${ctx.year}</span>`)}</p>
-<div class="footer-actions"><button type="button" data-install-open hidden>${icon("download")}<span>${esc(t("footer.install"))}</span></button><a href="#top">${icon("arrow-up-right", "icon-flip")}<span>${esc(t("footer.top"))}</span></a></div></div>
+<a href="#top">${icon("arrow-up")}<span>${esc(t("footer.top"))}</span></a></div>
 </div></footer>`;
 }
 
@@ -155,7 +153,7 @@ function shell(ctx, o, body, { minimal = false, extraScripts = "" } = {}) {
   }).replace(/</g, "\\u003c");
   return `<!doctype html>
 <html lang="${lang}" dir="${dir}"><head>${head(ctx, o)}</head>
-<body id="top"><a class="skip-link" href="#main">${esc(t("nav.skip"))}</a>
+<body id="top">${ambient}<a class="skip-link" href="#main">${esc(t("nav.skip"))}</a>
 ${header(ctx, lang, page, t)}
 <main id="main" tabindex="-1">${body}</main>
 ${footer(ctx, lang, t)}
@@ -207,16 +205,14 @@ function homePage(ctx, lang) {
   const last = nameParts.at(-1);
   const total = ctx.gallery.items.length;
   const counts = Object.fromEntries(ctx.gallery.categories.map((c) => [c.id, ctx.gallery.items.filter((i) => i.category === c.id).length]));
-  const traces = `<svg class="hero-traces" viewBox="0 0 1200 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="trace-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="700"><stop offset="0" stop-color="#00b4d8"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
-<path pathLength="1" d="M-10 560H260L320 500H610L660 450H1210"/><path pathLength="1" d="M-10 610H180L230 660H520"/><path pathLength="1" d="M700 -10V120L760 180H1210"/><path pathLength="1" d="M900 -10V60L940 100H1210"/>
-<circle cx="320" cy="500" r="5"/><circle cx="660" cy="450" r="5"/><circle cx="760" cy="180" r="5"/><circle cx="520" cy="660" r="5"/></svg>`;
-
   const interests = ctx.site.interests
     .map((id, i) => {
       const latin = { ai: "AI & Robotics", networks: "Networking", cyber: "Cyber Security", embedded: "Embedded Systems", iot: "Hardware & IoT", programming: "C++ / Python", art: "Digital Art & Poetry" }[id];
       return `<li class="index-item ${reveal(i)}"><span class="index-num mono">${String(i + 1).padStart(2, "0")}</span><h3>${esc(t(`interests.${id}.name`))}${lang === "ar" ? `<span class="index-latin mono" lang="en" dir="ltr">${esc(latin)}</span>` : ""}</h3><p class="index-desc">${esc(t(`interests.${id}.desc`))}</p></li>`;
     })
     .join("");
+
+  const alsoTags = ["cyber", "networks", "embedded", "iot", "programming", "art"].map((id) => `<li>${esc(t(`interests.${id}.name`))}</li>`).join("");
 
   const cols = ctx.gallery.categories
     .map((c, i) => {
@@ -228,15 +224,22 @@ function homePage(ctx, lang) {
 
   const v = ctx.literature.verses[0];
   const body = `
-<section class="hero"><div class="hero-bg">${traces}</div><div class="container hero-grid">
+<section class="hero"><div class="container hero-grid">
 <div class="hero-copy intro">
 <p class="eyebrow">${esc(t("home.eyebrow"))}</p>
-<h1 class="hero-title">${esc(first)} <em>${esc(last)}</em></h1>
+<h1 class="hero-title"><span class="hero-first">${esc(first)}</span> <em>${esc(last)}</em></h1>
+<p class="hero-role"><strong>${esc(t("home.role"))}</strong></p>
 <p class="hero-lede">${esc(t("home.lede"))}</p>
-<div class="hero-actions"><a class="btn btn--primary" href="${route(lang, "gallery")}">${esc(t("home.ctaGallery"))}${icon("arrow-right", "icon-flip icon-nudge")}</a><a class="btn btn--ghost" href="${route(lang, "about")}">${esc(t("home.ctaAbout"))}</a><a class="text-link" href="${route(lang, "contact")}">${esc(t("home.ctaContact"))}</a></div>
-<p class="hero-status">${esc(t("home.status"))}</p>
+<div class="hero-actions"><a class="btn btn--primary" href="${route(lang, "gallery")}">${esc(t("home.ctaGallery"))}${icon("arrow-right", "icon-flip icon-nudge")}</a><a class="btn btn--ghost" href="${route(lang, "about")}">${esc(t("home.ctaAbout"))}</a></div>
+<div class="hero-also"><p class="mono">${esc(t("home.alsoLabel"))}</p><ul class="tags" role="list">${alsoTags}</ul></div>
 </div>
-<div class="hero-art"><div class="arch"><div class="arch-img fade-img">${picture(ctx, "profile", { sizes: "(min-width: 900px) 26rem, 80vw", alt: ctx.gallery.profile.alt[lang], priority: true })}</div></div></div>
+<div class="hero-art">
+<div class="art-wash" aria-hidden="true"></div>
+<svg class="art-trace" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><defs><linearGradient id="trace-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="400"><stop offset="0" stop-color="#00b4d8"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs><path pathLength="1" d="M300 90H350L368 108V150"/><path pathLength="1" d="M120 320V352L104 368H26"/><path pathLength="1" d="M90 80V44L110 24H196"/><path pathLength="1" d="M320 250H372L388 266V336"/><circle cx="368" cy="150" r="4"/><circle cx="26" cy="368" r="4"/><circle cx="196" cy="24" r="4"/><circle cx="388" cy="336" r="4"/></svg>
+<div class="print print--back" aria-hidden="true"></div>
+<figure class="print"><div class="print-img fade-img">${picture(ctx, "profile", { sizes: "(min-width: 900px) 30rem, 86vw", alt: ctx.gallery.profile.alt[lang], priority: true })}</div></figure>
+<p class="art-badge">${esc(t("home.status"))}</p>
+</div>
 </div></section>
 
 <section class="section" aria-labelledby="interests-h"><div class="container">
@@ -270,7 +273,7 @@ ${lang === "en" ? `<p class="verse-meta"><em>${esc(v.translation)}</em></p>` : "
   ];
   const pim = ctx.images.profile;
   const pset = pim.widths.map((w) => `/img/${pim.slug}-${w}.${pim.hash}.avif ${w}w`).join(", ");
-  const extraHead = `<link rel="preload" as="image" type="image/avif" imagesrcset="${pset}" imagesizes="(min-width: 900px) 26rem, 80vw" fetchpriority="high">`;
+  const extraHead = `<link rel="preload" as="image" type="image/avif" imagesrcset="${pset}" imagesizes="(min-width: 900px) 30rem, 86vw" fetchpriority="high">`;
   return shell(ctx, { lang, page: "home", meta: t("meta.home"), jsonld: ld, extraHead }, body);
 }
 
@@ -392,7 +395,7 @@ function utilityPage(ctx, kind) {
   const pwa = JSON.stringify({ dismiss: t("pwa.dismiss"), offline: t("pwa.offline"), online: t("pwa.online"), updateReady: t("pwa.updateReady"), refresh: t("pwa.refresh") });
   return `<!doctype html>
 <html lang="ar" dir="${dir}"><head>${head(ctx, o)}</head>
-<body id="top"><header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="${esc(t("nav.homeLink"))}">${brandMark()}<span>${esc(ctx.site.name.ar)}</span></a><div class="header-controls"><button class="icon-btn theme-toggle" type="button" data-theme-toggle data-to-dark="${esc(t("theme.toDark"))}" data-to-light="${esc(t("theme.toLight"))}" aria-label="${esc(t("theme.toDark"))}">${icon("moon", "icon-moon")}${icon("sun", "icon-sun")}</button></div></div></header>
+<body id="top">${ambient}<header class="site-header"><div class="container"><div class="header-inner"><a class="brand" href="/" aria-label="${esc(t("nav.homeLink"))}">${brandMark()}<span>${esc(ctx.site.name.ar)}</span></a><div class="header-controls"><button class="icon-btn theme-toggle" type="button" data-theme-toggle data-to-dark="${esc(t("theme.toDark"))}" data-to-light="${esc(t("theme.toLight"))}" aria-label="${esc(t("theme.toDark"))}">${icon("moon", "icon-moon")}${icon("sun", "icon-sun")}</button></div></div></div></header>
 <main id="main" tabindex="-1" class="container">${block("ar")}${block("en")}</main>
 <div class="toast-region" id="toast-region" role="status" aria-live="polite"></div>
 <script type="application/json" id="pwa-strings">${pwa.replace(/</g, "\\u003c")}</script>

@@ -22,6 +22,16 @@ html {
   background-size: 160px 160px;
 }
 
+/* the tinted canvas sits under the grain; both are static (no repaint while scrolling) */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: var(--canvas);
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -37,8 +47,8 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg);
-  /* faint paper grain: tiny inline tile, scrolls with the page (no fixed layers) */
+  /* transparent on purpose: the ambient light layer paints behind the page content */
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--step-0);
@@ -74,8 +84,8 @@ img {
 
 a {
   color: var(--accent-2);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
+  text-decoration: none;
+  transition: color var(--dur-1) var(--ease);
 }
 
 a:hover {
@@ -198,9 +208,11 @@ p {
 
 .eyebrow::before {
   content: "";
-  inline-size: 2rem;
-  block-size: 1px;
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
   background: var(--gradient);
+  box-shadow: 0 0 0 4px rgb(236 72 153 / 0.14);
 }
 
 .icon {
@@ -223,39 +235,79 @@ p {
   transform: scaleX(-1);
 }
 
-/* ---------- Ambient background: two soft brand-colour glows + a faint dot grid ---------- */
-body::before,
-body::after {
-  content: "";
+/* ---------- Ambient light ----------
+   Three soft brand-colour glows drifting very slowly behind everything. Radial gradients (no blur
+   filter) animated with transform only; fixed, non-interactive and clipped so they can never cause
+   horizontal scroll, cross over text or intercept pointer events. */
+.ambient {
   position: fixed;
-  z-index: -1;
-  pointer-events: none;
-}
-
-body::before {
-  inset: -20vmax;
-  background:
-    radial-gradient(38vmax 38vmax at 18% 22%, rgb(0 180 216 / var(--glow-a)), transparent 70%),
-    radial-gradient(34vmax 34vmax at 82% 74%, rgb(236 72 153 / var(--glow-b)), transparent 70%);
-}
-
-body::after {
   inset: 0;
-  background-image: radial-gradient(circle, var(--dot) 1px, transparent 1.5px);
-  background-size: 28px 28px;
-  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
-  mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+  z-index: -1;
+  overflow: clip;
+  pointer-events: none;
+  contain: strict;
+}
+
+.ambient i {
+  position: absolute;
+  inline-size: 62vmax;
+  block-size: 62vmax;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.ambient i:nth-child(1) {
+  inset-block-start: -22vmax;
+  inset-inline-start: -16vmax;
+  background: radial-gradient(closest-side, rgb(0 180 216 / var(--amb-cyan)), transparent);
+}
+
+.ambient i:nth-child(2) {
+  inset-block-end: -26vmax;
+  inset-inline-end: -18vmax;
+  background: radial-gradient(closest-side, rgb(236 72 153 / var(--amb-pink)), transparent);
+}
+
+.ambient i:nth-child(3) {
+  inset-block-start: 28vh;
+  inset-inline-end: 8vw;
+  inline-size: 44vmax;
+  block-size: 44vmax;
+  background: radial-gradient(closest-side, rgb(119 102 176 / var(--amb-violet)), transparent);
 }
 
 @media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
-  body::before {
-    animation: drift 48s ease-in-out infinite alternate;
+  .ambient i {
     will-change: transform;
+  }
+
+  .ambient i:nth-child(1) {
+    animation: drift-a 52s ease-in-out infinite alternate;
+  }
+
+  .ambient i:nth-child(2) {
+    animation: drift-b 64s ease-in-out infinite alternate;
+  }
+
+  .ambient i:nth-child(3) {
+    animation: drift-c 44s ease-in-out infinite alternate;
   }
 }
 
-@keyframes drift {
+@keyframes drift-a {
   to {
-    transform: translate3d(5vmax, 3vmax, 0) scale(1.08);
+    transform: translate3d(9vmax, 7vmax, 0) scale(1.1);
+  }
+}
+
+@keyframes drift-b {
+  to {
+    transform: translate3d(-8vmax, -6vmax, 0) scale(1.08);
+  }
+}
+
+@keyframes drift-c {
+  to {
+    transform: translate3d(-10vmax, 6vmax, 0) scale(0.92);
   }
 }

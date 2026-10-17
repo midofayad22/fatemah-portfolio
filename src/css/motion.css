@@ -17,20 +17,35 @@
   transition: opacity var(--dur-3) var(--ease-out) var(--d, 0ms), transform var(--dur-3) var(--ease-out) var(--d, 0ms);
 }
 
-/* page introduction (hero only, ~0.7s in total) */
+/* page introduction (hero only, ~0.8s in total). Transform-only on anything that paints the LCP. */
 @keyframes rise {
   from {
     transform: translateY(14px);
   }
 }
 
-@keyframes arch-in {
+@keyframes fade-rise {
   from {
-    clip-path: inset(18% 0 0 0 round 999px 999px 0 0);
-    transform: translateY(12px);
+    opacity: 0;
+    transform: translateY(14px);
   }
-  to {
-    clip-path: inset(0 0 0 0 round 999px 999px 0 0);
+}
+
+@keyframes print-in {
+  from {
+    transform: translateY(28px) rotate(6deg);
+  }
+}
+
+@keyframes print-back-in {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes stroke-in {
+  from {
+    transform: scaleX(0);
   }
 }
 
@@ -47,7 +62,7 @@
 }
 
 .intro > * {
-  animation: rise 640ms var(--ease-out) both;
+  animation: rise 700ms var(--ease-out) both;
 }
 
 .intro > :nth-child(1) {
@@ -59,7 +74,7 @@
 }
 
 .intro > :nth-child(3) {
-  animation-delay: 190ms;
+  animation-delay: 200ms;
 }
 
 .intro > :nth-child(4) {
@@ -70,19 +85,44 @@
   animation-delay: 340ms;
 }
 
-/* the artwork uses transform/clip only so it can paint (and be measured) immediately */
-.hero-art .arch-img {
-  animation: arch-in 900ms var(--ease-out) 80ms both;
+.intro > :nth-child(6) {
+  animation-delay: 420ms;
 }
 
-.js .hero-traces path {
+.hero-role strong::after {
+  animation: stroke-in 900ms var(--ease-out) 520ms both;
+}
+
+.hero-art .print:not(.print--back) {
+  animation: print-in 1000ms var(--ease-out) 80ms both;
+}
+
+.hero-art .print--back {
+  animation: print-back-in 1100ms var(--ease-out) 200ms backwards;
+}
+
+.js .art-trace path {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: trace-draw 1800ms var(--ease) 200ms forwards;
+  animation: trace-draw 1800ms var(--ease) 400ms forwards;
 }
 
-.js .hero-traces circle {
-  animation: node-in 400ms var(--ease) 1200ms both;
+.js .art-trace circle {
+  animation: node-in 400ms var(--ease) 1400ms both;
+}
+
+/* the wash breathes very slowly (transform only, desktop only) */
+@media (prefers-reduced-motion: no-preference) and (min-width: 900px) {
+  .art-wash {
+    animation: wash 26s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+}
+
+@keyframes wash {
+  to {
+    transform: rotate(14deg) scale(1.06);
+  }
 }
 
 /* ---------- Reduced motion ---------- */
@@ -103,7 +143,7 @@
     transform: none;
   }
 
-  .js .hero-traces path {
+  .js .art-trace path {
     stroke-dashoffset: 0;
   }
 
